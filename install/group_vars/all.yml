@@ -23,7 +23,7 @@ epel_repo: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rp
 # as the current firewall code will detect this and leave it alone.
 # if you really, really want to disable checking/applying service firewall rules
 # then change to 'false' or empty
-manage_firewall: true
+manage_firewall: false
 
 ### reverse proxy ###
 # we use a reverse proxy with the default being nginx
@@ -58,7 +58,7 @@ kibana_password: admin
 # logging_backend:
 # logging_backend: logstash
 # logging_backend: fluentd
-logging_backend:
+logging_backend: logstash
 #
 ### logstash options ###
 logstash_syslog_port: 5044
