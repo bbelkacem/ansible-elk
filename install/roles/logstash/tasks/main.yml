@@ -73,19 +73,19 @@
   when: subjectAltName_exists.stdout|int == 0
   become: true
 
-- name: Load filebeat JSON index template
-  uri:
-    url: http://localhost:9200/_template/filebeat?pretty
-    method: POST
-    body: "{{ lookup('file', 'filebeat-index-template.json') }}"
-    body_format: json
-    return_content: yes
-  register: filebeatJSON_output
-  until: '"json" in filebeatJSON_output and filebeatJSON_output.json.acknowledged == true'
-  retries: 30
-  delay: 10
-  become: true
-  when: not install_elasticsearch_xpack or not install_logstash_xpack or not install_kibana_xpack
+# - name: Load filebeat JSON index template
+  # #uri:
+  #   url: http://localhost:9200/_template/filebeat?pretty
+  #   method: POST
+  #   body: "{{ lookup('file', 'filebeat-index-template.json') }}"
+  #   body_format: json
+  #   return_content: yes
+  # register: filebeatJSON_output
+  # until: '"json" in filebeatJSON_output and filebeatJSON_output.json.acknowledged == true'
+  # retries: 30
+  # delay: 10
+  # become: true
+  # when: not install_elasticsearch_xpack or not install_logstash_xpack or not install_kibana_xpack
 
 # X-Pack requires additional authentication
 - name: Load filebeat JSON index template (X-Pack enabled)
