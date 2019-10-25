@@ -97,11 +97,11 @@ install_curator_tool: false
 # DO NOT CHANGE THIS UNLESS YOU CHANGE IT ON ES
 xpack_elastic_user_password: changeme
 # install elastic x-pack
-install_elasticsearch_xpack: false
+install_elasticsearch_xpack: true
 # install kibana x-pack
-install_kibana_xpack: false
+install_kibana_xpack: true
 # install logstash x-pack
-install_logstash_xpack: false
+install_logstash_xpack: true
 
 #Install Metricbeat
 install_metricbeat: false
